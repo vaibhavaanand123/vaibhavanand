@@ -1,0 +1,92 @@
+/* Import Tailwind */
+@import "tailwindcss";
+
+/* ========= Theme Extension ========= */
+@theme {
+  --color-primary: #111f44;
+  --color-primary-text: #c4d1e6;
+
+  --color-primary-100: #cce0ff;
+  --color-primary-200: #99c2ff;
+  --color-primary-300: #66a3ff;
+  --color-primary-400: #3385ff;
+  --color-primary-500: #0066ff;   /* Main brand color */
+  --color-primary-600: #0052cc;
+  --color-primary-700: #003d99;
+  --color-primary-800: #002966;
+  --color-primary-900: #001433;
+
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+  --font-sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  --font-display: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+/* ========= Base ========= */
+:root { color-scheme: dark; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    position: relative;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+  @apply bg-primary text-primary-text antialiased selection:bg-primary-500/30;
+}
+
+.spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background: radial-gradient(
+    circle 60vh at var(--x, 80%) var(--y, 80%),
+    rgba(255, 255, 255, 0.15),
+    transparent 80%
+  );
+  mix-blend-mode: lighten;
+  z-index: 9999;
+  transition: background 0.1s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  @apply font-bold tracking-tight;
+}
+
+h1 { @apply text-4xl sm:text-5xl lg:text-6xl; }
+h2 { @apply text-xl sm:text-2xl lg:text-3xl; }
+h3 { @apply text-lg lg:text-xl; }
+
+a { @apply transition-colors duration-200; }
+
+/* Section spacing (and nice scroll margin for anchored headings) */
+section { @apply py-10 lg:py-16; }
+[id] { @apply scroll-mt-20 lg:scroll-mt-10; }
+
+/* Reusable UI bits */
+.tag { @apply inline-block rounded-md bg-white/5 px-2 py-1 text-xs tracking-wide; }
+.card {
+  @apply rounded-2xl bg-white/5 p-5 backdrop-blur-sm ring-1 ring-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.12)];
+}
+
+/* Divider line used in the left nav */
+.nav-line {
+  @apply relative pl-8;
+}
+.nav-line::before {
+  content: "";
+  @apply absolute left-0 top-1/2 -translate-y-1/2 h-[1px] w-6 bg-white/20;
+}
+
+/* Simple fade-in on load */
+.fade-in { animation: fadeIn 700ms ease-out both; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Improve focus visibility */
+:focus-visible { @apply outline-none ring-2 ring-primary-400 ring-offset-2 ring-offset-primary; }
