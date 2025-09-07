@@ -48,7 +48,7 @@ const RightPanel = () => {
           {/* Download Resume Button */}
           <div className="mt-6">
             <a
-              href="/Vaibhav_Anand.pdf" // put your resume file inside public/ folder
+              href="/Vaibhav Anand.pdf" // put your resume file inside public/ folder
               // download
               target="_blank" // opens in new tab
               rel="noopener noreferrer" // security best practice
