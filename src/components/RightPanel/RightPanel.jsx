@@ -37,7 +37,7 @@ const RightPanel = () => {
           {/* Resume Button */}
           <div className="mt-6">
             <a
-              href="/public/Vaibhav Anand.pdf"
+              href="/Vaibhav Anand.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="
