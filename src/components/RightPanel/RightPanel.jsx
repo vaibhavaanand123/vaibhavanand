@@ -1,57 +1,45 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import ExperienceSection from "./Components/Experience/ExperienceSection";
 
-/**
- * RightPanel
- * - Desktop (lg+): sits beside the fixed sidebar with left margin
- * - Mobile: full-width content stack
- */
 const RightPanel = () => {
   return (
     <main
       className="
         fade-in
-        w-full lg:w-[50%]
+        w-full lg:w-[60%]
         lg:ml-[40%]
         text-primary-text
+    
       "
     >
-      <div className="mx-auto max-w-xl px-4 py-9">
+      <div className="mx-auto max-w-2xl px-2 py-10">
         {/* ABOUT */}
         <section id="about" aria-labelledby="about-title">
-          <h2 id="about-title" className="sr-only">
-            About
+          <h2 id="about-title" className="text-white text-2xl font-bold">
+            About Me
           </h2>
-          <div className="text-md leading-6 space-y-6 text-justify">
+          <div className="mt-4 text-md leading-6 space-y-4 text-justify text-white/80">
             <p>
-              I’m a developer passionate about crafting accessible,
-              pixel-perfect user interfaces that blend thoughtful design with
-              robust engineering. My favorite work lies at the intersection of
-              design and development, creating experiences that not only look
-              great but are meticulously built for performance and usability.
+              I’m <span className="font-semibold text-white">Vaibhav Anand</span>, 
+              a Frontend & Full-Stack Developer passionate about building 
+              <span className="font-semibold text-white"> high-performance, SEO-optimized, and accessible web applications</span>. 
             </p>
             <p>
-              Currently, I’m a{" "}
-              <span className="font-semibold text-white">
-                Full Stack Engineer
-              </span>
-              , specializing in accessibility and scalable systems. I contribute
-              to the creation and maintenance of UI and backend components that
-              power applications, ensuring platforms meet modern web standards.
-            </p>
-            <p>
-              In my spare time I’m usually tinkering with side projects,
-              reading, or exploring new libraries and patterns across the JS and
-              Java ecosystems.
+              With expertise in <strong>React.js, Next.js, Redux, and Spring Boot</strong>, 
+              I specialize in creating scalable solutions that blend thoughtful 
+              design with robust engineering. My work is focused on driving real 
+              business outcomes — from improving performance metrics to boosting 
+              conversions.
             </p>
           </div>
 
-          {/* Download Resume Button */}
+          {/* Resume Button */}
           <div className="mt-6">
             <a
-              href="/Vaibhav Anand.pdf" // put your resume file inside public/ folder
-              // download
-              target="_blank" // opens in new tab
-              rel="noopener noreferrer" // security best practice
+              href="/public/Vaibhav Anand.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="
                 inline-block
                 rounded-lg
@@ -64,118 +52,66 @@ const RightPanel = () => {
                 transition
               "
             >
-              View Full Resume --
+              View Full Resume →
             </a>
           </div>
         </section>
 
         {/* EXPERIENCE */}
-        <section
-          id="experience"
-          aria-labelledby="exp-title"
-          className="border-t border-white/10 mt-10 lg:mt-16"
-        >
-          <h2 id="exp-title" className="mt-8 text-white">
-            Experience
-          </h2>
-
-          <ol className="mt-6 space-y-6">
-            {/* Item 1 */}
-            <li className="card">
-              <div className="flex items-start justify-between gap-4">
-                <p className="text-[11px] uppercase tracking-widest text-white/50">
-                  2024 — Present
-                </p>
-                <div className="shrink-0 space-x-2 hidden sm:block">
-                  <span className="tag">JavaScript</span>
-                  <span className="tag">TypeScript</span>
-                  <span className="tag">React</span>
-                  <span className="tag">Spring Boot</span>
-                </div>
-              </div>
-              <h3 className="mt-2 text-white text-lg">
-                Senior Full Stack Engineer · Example Company
-              </h3>
-              <p className="mt-2 text-sm leading-6 text-white/70">
-                Build and maintain critical components across frontend and
-                backend. Collaborate with cross-functional teams—developers,
-                designers, and PMs— to implement best practices in performance,
-                accessibility, and DX.
-              </p>
-              <div className="sm:hidden mt-3 space-x-2">
-                <span className="tag">JavaScript</span>
-                <span className="tag">TypeScript</span>
-                <span className="tag">React</span>
-                <span className="tag">Spring Boot</span>
-              </div>
-            </li>
-
-            {/* Item 2 */}
-            <li className="card">
-              <div className="flex items-start justify-between gap-4">
-                <p className="text-[11px] uppercase tracking-widest text-white/50">
-                  2021 — 2024
-                </p>
-                <div className="shrink-0 space-x-2 hidden sm:block">
-                  <span className="tag">Node.js</span>
-                  <span className="tag">PostgreSQL</span>
-                  <span className="tag">Docker</span>
-                  <span className="tag">AWS</span>
-                </div>
-              </div>
-              <h3 className="mt-2 text-white text-lg">
-                Lead Engineer · Uptoextent
-              </h3>
-              <p className="mt-2 text-sm leading-6 text-white/70">
-                Built design systems, high-quality web apps, APIs, and CI/CD
-                pipelines. Drove cross-team collaboration and mentored engineers
-                on modern web practices.
-              </p>
-              <div className="sm:hidden mt-3 space-x-2">
-                <span className="tag">Node.js</span>
-                <span className="tag">PostgreSQL</span>
-                <span className="tag">Docker</span>
-                <span className="tag">AWS</span>
-              </div>
-            </li>
-          </ol>
-        </section>
+        <ExperienceSection />
 
         {/* PROJECTS */}
         <section
           id="projects"
           aria-labelledby="proj-title"
-          className="border-t border-white/10 mt-10 lg:mt-14"
+          className="border-t border-white/10 mt-12"
         >
-          <h2 id="proj-title" className="mt-8 text-white">
-            Projects
+          <h2 id="proj-title" className="text-white text-2xl font-bold mt-8">
+            Featured Projects
           </h2>
 
           <div className="mt-6 grid grid-cols-1 gap-6">
+            {/* Project 1 */}
             <article className="card">
               <header className="flex items-center justify-between">
-                <h3 className="text-white">Raahi Sathi – Travel Platform</h3>
+                <h3 className="text-white text-lg font-semibold">
+                  MatchMyTravels – Cab Platform
+                </h3>
                 <div className="hidden sm:flex gap-2">
                   <span className="tag">React</span>
-                  <span className="tag">Vite</span>
-                  <span className="tag">Tailwind</span>
+                  <span className="tag">Next.js</span>
+                  <span className="tag">Spring Boot</span>
                 </div>
               </header>
               <p className="mt-2 text-sm leading-6 text-white/70">
-                Full-stack booking experience with location autocomplete, trip
-                types, validation, and Map APIs. Optimized for SEO and
-                conversions.
+                A full-stack booking platform with trip-type forms, MapmyIndia 
+                autocomplete, and vendor dashboards. <strong>Improved load 
+                speed by 30% and boosted SEO ranking</strong>.
               </p>
-              <div className="sm:hidden mt-3 space-x-2">
-                <span className="tag">React</span>
-                <span className="tag">Vite</span>
-                <span className="tag">Tailwind</span>
+              <div className="mt-3 flex gap-3">
+                <Link
+                  to="/projects/matchmytravels"
+                  className="text-blue-400 hover:underline text-sm"
+                >
+                  Case Study →
+                </Link>
+                <a
+                  href="https://www.matchmytravels.in"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-blue-400 hover:underline text-sm"
+                >
+                  Live Demo →
+                </a>
               </div>
             </article>
 
+            {/* Project 2 */}
             <article className="card">
               <header className="flex items-center justify-between">
-                <h3 className="text-white">Vendor Admin Panel</h3>
+                <h3 className="text-white text-lg font-semibold">
+                  Vendor Admin Panel
+                </h3>
                 <div className="hidden sm:flex gap-2">
                   <span className="tag">TypeScript</span>
                   <span className="tag">React Query</span>
@@ -183,19 +119,23 @@ const RightPanel = () => {
                 </div>
               </header>
               <p className="mt-2 text-sm leading-6 text-white/70">
-                Role-based dashboard for vendors with metrics, CRUD flows, and
-                file uploads.
+                A role-based dashboard with CRUD flows, file uploads, and 
+                analytics. Designed for scalability and streamlined vendor 
+                management.
               </p>
-              <div className="sm:hidden mt-3 space-x-2">
-                <span className="tag">TypeScript</span>
-                <span className="tag">React Query</span>
-                <span className="tag">Spring Boot</span>
+              <div className="mt-3 flex gap-3">
+                <Link
+                  to="/projects/vendor-admin"
+                  className="text-blue-400 hover:underline text-sm"
+                >
+                  Case Study →
+                </Link>
               </div>
             </article>
           </div>
         </section>
 
-        {/* Footer spacer for nice bottom breathing room */}
+        {/* Footer spacer */}
         <div className="h-10" />
       </div>
     </main>
