@@ -6,7 +6,7 @@ const experiences = [
   {
     role: "Freelance Software Engineer",
     company: "Self-Employed",
-    period: "2024 – Present",
+    period: "2024 – 2025",
     description:
       "Designed and developed full-stack applications with React.js, Next.js, and Spring Boot. Specialized in SEO-friendly UIs, performance tuning, and scalable systems. Delivered projects like MatchMyTravels that improved search visibility and reduced page load times by 30%.",
     tags: ["React.js", "Spring Boot", "Redux", "Mapbox", "SEO", "Web Performance"],

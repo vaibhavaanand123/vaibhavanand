@@ -1,7 +1,6 @@
-import React,{ useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
-import { SiCodepen, SiGoodreads } from "react-icons/si";
-
+import { SiCodepen, SiFacebook, SiX, SiGoodreads } from "react-icons/si";
 
 const sections = ["about", "experience", "projects"];
 
@@ -104,15 +103,17 @@ const LeftPannel = () => {
             >
               <FaLinkedin size={25} />
             </a>
+            {/* Facebook */}
             <a
-              className="hover:text-white"
-              href="https://codepen.io"
+              className="hover:text-[#1877F2]"
+              href="https://www.facebook.com/vaibhavanandva"
               target="_blank"
               rel="noreferrer"
-              aria-label="CodePen"
+              aria-label="Facebook"
             >
-              <SiCodepen size={25} />
+              <SiFacebook size={25} />
             </a>
+
             <a
               className="hover:text-pink-400"
               href="https://www.instagram.com/vaibhav_aanand/"
@@ -122,14 +123,15 @@ const LeftPannel = () => {
             >
               <FaInstagram size={25} />
             </a>
+            {/* Twitter (X) */}
             <a
-              className="hover:text-green-400"
-              href="https://goodreads.com"
+              className="hover:text-black"
+              href="https://x.com/vaibhavanandav"
               target="_blank"
               rel="noreferrer"
-              aria-label="Goodreads"
+              aria-label="Twitter"
             >
-              <SiGoodreads size={24} />
+              <SiX size={25} />
             </a>
           </div>
         </div>
