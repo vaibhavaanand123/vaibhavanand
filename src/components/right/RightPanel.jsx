@@ -129,7 +129,7 @@ const RightPanel = () => {
                   to="/projects/vendor-admin"
                   className="text-blue-400 hover:underline text-sm"
                 >
-                  Case Study →
+                  Case Studys →
                 </Link>
               </div>
             </article>
