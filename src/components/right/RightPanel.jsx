@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ExperienceSection from "./Components/Experience/ExperienceSection";
+import ExperienceSection from "./rightComponents/Experience/ExperienceSection";
+import Footer from "../../pages/Footer";
 
 const RightPanel = () => {
   return (
@@ -137,6 +138,7 @@ const RightPanel = () => {
 
         {/* Footer spacer */}
         <div className="h-10" />
+        <Footer />
       </div>
     </main>
   );
