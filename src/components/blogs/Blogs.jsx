@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet-async"; // for SEO meta tags
+import { Title, Meta } from "react-head"; // 
 
 const blogPosts = [
   {
@@ -9,11 +9,6 @@ const blogPosts = [
     description:
       "A detailed look at building a fast, accessible portfolio using React, TailwindCSS, and modern SEO techniques.",
     keywords: ["React", "TailwindCSS", "Portfolio", "SEO"],
-    content: `
-      Creating a personal portfolio is not just about design — it's about speed, accessibility, and SEO. 
-      In this article, I share how I used React and TailwindCSS to build a performant and visually appealing website, 
-      while also making sure it ranks well on search engines.
-    `,
   },
   {
     slug: "spring-boot-react-scalable-apps",
@@ -22,29 +17,34 @@ const blogPosts = [
     description:
       "Best practices and patterns for developing production-ready full-stack applications with Spring Boot and React.",
     keywords: ["Spring Boot", "React", "Full Stack", "Scalability"],
-    content: `
-      Building scalable applications requires careful planning of architecture, database management, and deployment. 
-      Here I dive into lessons learned while scaling full-stack projects that power real-world businesses.
-    `,
   },
 ];
 
 const Blog = () => {
   return (
-    <main className="min-h-screen px-6 py-12 lg:px-24 bg-gradient-to-b from-gray-900 via-black to-gray-950 text-white">
-      {/* SEO Meta */}
-      <Helmet>
-        <title>Blog | Vaibhav Anand</title>
-        <meta
-          name="description"
-          content="Read insightful blogs on React, TailwindCSS, Spring Boot, Full-Stack Development, and SEO by Vaibhav Anand."
-        />
-        <meta
-          name="keywords"
-          content="React Blog, TailwindCSS Blog, Spring Boot Blog, Full-Stack Development, SEO"
-        />
-        <meta name="author" content="Vaibhav Anand" />
-      </Helmet>
+    <main
+      id="main-content"
+      className="min-h-screen px-6 py-12 lg:px-24 bg-gradient-to-b from-gray-900 via-black to-gray-950 text-white"
+    >
+      {/* 📝 Page SEO Meta */}
+      <Title>Blog | Vaibhav Anand</Title>
+      <Meta
+        name="description"
+        content="Read insightful blogs on React, TailwindCSS, Spring Boot, Full-Stack Development, and SEO by Vaibhav Anand."
+      />
+      <Meta
+        name="keywords"
+        content="React Blog, TailwindCSS Blog, Spring Boot Blog, Full-Stack Development, SEO"
+      />
+      <Meta name="author" content="Vaibhav Anand" />
+      <Meta property="og:title" content="Blog | Vaibhav Anand" />
+      <Meta
+        property="og:description"
+        content="Insights and tutorials on React, TailwindCSS, Spring Boot, scalability, and software engineering."
+      />
+      <Meta property="og:type" content="article" />
+      <Meta property="og:url" content="https://yourdomain.com/blog" />
+      <Meta name="twitter:card" content="summary_large_image" />
 
       {/* Blog Header */}
       <header className="text-center max-w-3xl mx-auto mb-12">
@@ -52,10 +52,10 @@ const Blog = () => {
           Insights & Stories
         </h1>
         <p className="text-gray-400 text-lg">
-          A collection of my thoughts, learnings, and experiments in{" "}
-          <span className="text-primary-text">Full-Stack Development</span>,
-          <span className="text-primary-text"> Scalable Systems</span>, and
-          <span className="text-primary-text"> Travel Tech</span>.
+          A collection of thoughts, learnings, and experiments in{" "}
+          <span className="text-primary-text">Full-Stack Development</span>,{" "}
+          <span className="text-primary-text">Scalable Systems</span>, and{" "}
+          <span className="text-primary-text">Travel Tech</span>.
         </p>
       </header>
 
@@ -71,7 +71,6 @@ const Blog = () => {
               <p className="text-gray-400 text-sm mb-3">{post.date}</p>
               <p className="mb-4 text-gray-300">{post.description}</p>
             </div>
-
             <div className="flex justify-between items-center mt-auto">
               <a
                 href={`/blog/${post.slug}`}

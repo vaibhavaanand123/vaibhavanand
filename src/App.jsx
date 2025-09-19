@@ -1,60 +1,51 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { Title, Meta } from "react-head"; // ❌ Removed Head
 import RightPanel from "./components/right/RightPanel";
 import TorchEffect from "./components/torchEffect/TorchEffect";
-import Blog from "./components/Blogs/Blogs"; 
-import LeftPannel from "./components/left/LeftPannel"
-// Future: import BlogPost from "./components/Blogs/BlogPost";
+import Blog from "./components/Blogs/Blogs";
+import LeftPanel from "./components/left/LeftPannel";
 
 const App = () => {
   return (
     <div className="min-h-screen bg-primary text-primary-text">
-      {/* 🔥 Default SEO for the site */}
-      <Helmet>
-        <title>Vaibhav Anand | Full Stack Engineer</title>
-        <meta
-          name="description"
-          content="Portfolio and blog of Vaibhav Anand, a Full Stack Engineer specializing in React, Spring Boot, SEO, and scalable web apps."
-        />
-        <meta property="og:title" content="Vaibhav Anand | Full Stack Engineer" />
-        <meta
-          property="og:description"
-          content="Explore my projects, blog posts, and insights on full stack development, SEO, and software engineering."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yourdomain.com/" />
-      </Helmet>
+      {/* 🌍 Global SEO defaults */}
+      <Title>Vaibhav Anand | Full Stack Engineer</Title>
+      <Meta
+        name="description"
+        content="Portfolio and blog of Vaibhav Anand, a Full Stack Engineer specializing in React, Spring Boot, SEO, and scalable web apps."
+      />
+      <Meta name="author" content="Vaibhav Anand" />
+      <Meta property="og:title" content="Vaibhav Anand | Full Stack Engineer" />
+      <Meta
+        property="og:description"
+        content="Explore my projects, blog posts, and insights on full stack development, SEO, and software engineering."
+      />
+      <Meta property="og:type" content="website" />
+      <Meta property="og:url" content="https://yourdomain.com/" />
+      <Meta name="twitter:card" content="summary_large_image" />
 
-      {/* Skip link for accessibility */}
+      {/* ♿ Skip to content link */}
       <a
-        href="#about"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 tag bg-primary-600 text-white"
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 px-3 py-2 bg-primary-600 text-white rounded-md"
       >
         Skip to content
       </a>
 
-      {/* Visual effect */}
       <TorchEffect />
 
-      {/* Routes */}
       <Routes>
-        {/* Main portfolio layout */}
         <Route
           path="/"
           element={
-            <>
-              <LeftPannel />
+            <div className="flex flex-col lg:flex-row">
+              <LeftPanel />
               <RightPanel />
-            </>
+            </div>
           }
         />
-
-        {/* Blog listing page */}
         <Route path="/blog" element={<Blog />} />
-
-        {/* Single blog post (future-ready) */}
-        {/* <Route path="/blog/:slug" element={<BlogPost />} /> */}
       </Routes>
     </div>
   );
