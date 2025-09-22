@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div className="min-h-screen bg-primary text-primary-text">
       {/* 🌍 Global SEO defaults */}
-      <Title>Vaibhav Anand | Full Stack Engineer</Title>
+      <Title>Vaibhav Anand  | Full Stack Engineer</Title>
       <Meta
         name="description"
         content="Portfolio and blog of Vaibhav Anand, a Full Stack Engineer specializing in React, Spring Boot, SEO, and scalable web apps."
