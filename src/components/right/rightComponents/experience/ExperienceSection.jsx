@@ -1,5 +1,5 @@
 import React from "react";
-import ExperienceItem from "./ExperienceItem";
+import ExperienceItem from "./ExperienceItem.jsx";
 
 
 const experiences = [

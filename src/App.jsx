@@ -1,10 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Title, Meta } from "react-head"; // ❌ Removed Head
-import RightPanel from "./components/right/RightPanel";
-import Blog from "./components/Blogs/Blogs";
-import LeftPanel from "./components/left/LeftPannel";
-import TorchEffect from "./components/torchEffect/TorchEffect";
+import RightPanel from "./components/right/RightPanel.jsx";
+import Blog from "./components/Blogs/Blogs.jsx";
+import LeftPanel from "./components/left/LeftPannel.jsx";
+import TorchEffect from "./components/torchEffect/TorchEffect.jsx";
 
 const App = () => {
   return (

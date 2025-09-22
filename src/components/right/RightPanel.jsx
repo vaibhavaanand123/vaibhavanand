@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ExperienceSection from "./rightComponents/Experience/ExperienceSection";
-import Footer from "../../pages/Footer";
+import ExperienceSection from "./rightComponents/Experience/ExperienceSection.jsx";
+import Footer from "../../pages/Footer.jsx";
 
 const RightPanel = () => {
   return (
