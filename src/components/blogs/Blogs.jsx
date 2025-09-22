@@ -20,7 +20,7 @@ const blogPosts = [
   },
 ];
 
-const Blog = () => {
+const Blogs = () => {
   return (
     <main
       id="main-content"
@@ -90,4 +90,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Blogs;

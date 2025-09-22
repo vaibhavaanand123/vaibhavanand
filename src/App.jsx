@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import { Title, Meta } from "react-head"; // ❌ Removed Head
 import TorchEffect from "./components/torchEffect/TorchEffect.jsx";
 import RightPanel from "./components/right/RightPanel.jsx";
-import Blog from "./components/Blogs/Blogs.jsx";
 import LeftPanel from "./components/left/LeftPannel.jsx";
+import Blogs from "./components/Blogs/Blogs.jsx";
 
 
 const App = () => {
@@ -46,7 +46,7 @@ const App = () => {
             </div>
           }
         />
-        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog" element={<Blogs />} />
       </Routes>
     </div>
   );
