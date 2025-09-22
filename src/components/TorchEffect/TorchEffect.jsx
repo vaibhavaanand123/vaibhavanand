@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import react, { useEffect } from "react";
 
 const TorchEffect = () => {
   useEffect(() => {
